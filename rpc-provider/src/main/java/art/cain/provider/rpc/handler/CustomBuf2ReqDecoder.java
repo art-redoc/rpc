@@ -17,6 +17,7 @@ public class CustomBuf2ReqDecoder extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buf, List<Object> out) throws Exception {
+//        System.out.println("buf length: " + buf.readableBytes());
         while (complete(buf)) {
 //            System.out.println("thread: " + Thread.currentThread().getName() + " data length: " + dataLength + " readable: " + buf.readableBytes());
             Header header = Header.build(buf);
